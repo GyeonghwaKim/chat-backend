@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: chat-backend
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: JAVA_OPTS
+        value: -Xmx512m
+    healthCheckPath: /actuator/health
